@@ -40,7 +40,7 @@ const Header = () => {
 <div className="flex items-center space-x-2">
   <a href="#hero" className="flex items-center">
     <img 
-      src="/livgruha_logo_transparent-bjem1q3g.png" 
+      src="/livgruha_logo_transparent-bjem1q3g.jpg" 
       alt="LIVGRUHA" 
       className="h-10 w-auto"
     />
