@@ -41,7 +41,7 @@ const Header = () => {
 <div className="flex items-center space-x-2">
   <a href="#hero" className="flex items-center">
     <img 
-      src="/GruhaLogo.png" 
+      src="/livgruha_logo_transparent-bjem1q3g.png" 
       alt="Gruha Logo" 
       className="h-10 w-auto"
     />
