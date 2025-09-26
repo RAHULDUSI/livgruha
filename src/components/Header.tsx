@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/livgruha_logo_transparent-bjem1q3g.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,13 +39,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
 <div className="flex items-center space-x-2">
-  <a href="#hero" className="flex items-center">
-    <img 
-      src="/livgruha_logo_transparent-bjem1q3g.jpg" 
-      alt="LIVGRUHA" 
-      className="h-10 w-auto"
-    />
-  </a>
+  <img src="/livgruha_logo_transparent-bjem1q3g.jpg" alt="LIVGRUHA" />
+
   <span
     className={`text-2xl font-bold transition-colors ${
       isScrolled ? 'text-slate-900' : 'text-white'
