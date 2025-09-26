@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div ><a href="src/GruhaLogo.png"></div >
+            <div ><a href="src/GruhaLogo.png"></a></div >
             <span className={`text-2xl font-bold transition-colors ${
               isScrolled ? 'text-slate-900' : 'text-white'
             }`}>
