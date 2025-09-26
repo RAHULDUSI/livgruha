@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
-              <Home className="h-6 w-6 text-white" />
+              
             </div>
             <span className={`text-2xl font-bold transition-colors ${
               isScrolled ? 'text-slate-900' : 'text-white'
