@@ -50,7 +50,6 @@ const Header = () => {
       isScrolled ? 'text-slate-900' : 'text-white'
     }`}
   >
-    Gruha
   </span>
 </div>
           {/* Desktop Navigation */}
