@@ -37,14 +37,23 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div ><img="src/livgruha_logo_transparent-bjem1q3g.png"></img></div >
-            <span className={`text-2xl font-bold transition-colors ${
-              isScrolled ? 'text-slate-900' : 'text-white'
-            }`}>
-            </span>
-          </div>
-
+          {/* Logo */}
+<div className="flex items-center space-x-2">
+  <a href="#hero" className="flex items-center">
+    <img 
+      src="/GruhaLogo.png" 
+      alt="Gruha Logo" 
+      className="h-10 w-auto"
+    />
+  </a>
+  <span
+    className={`text-2xl font-bold transition-colors ${
+      isScrolled ? 'text-slate-900' : 'text-white'
+    }`}
+  >
+    Gruha
+  </span>
+</div>
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
