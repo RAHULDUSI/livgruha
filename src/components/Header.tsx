@@ -39,7 +39,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
 <div className="flex items-center space-x-2">
-  <img src="/livgruha_logo_transparent-bjem1q3g.jpg" alt="LIVGRUHA" />
+  <img
+  src="/livgruha_logo_transparent-bjem1q3g.jpg"
+  alt="LIVGRUHA"
+  className="h-10 w-auto"
+/>
 
   <span
     className={`text-2xl font-bold transition-colors ${
