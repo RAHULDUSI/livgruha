@@ -133,11 +133,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
-
-        <a href="https://wa.me/+917995672323" style="position: fixed; bottom: 20px;  right: 20px;  background-color: transparent; " target="_blank" title="Chat on WhatsApp">
-      <img src="assets/whatsapp.png" width="80px" height="80px" alt="WhatsApp" />
-    </a> 
+        </div> 
 
       </div>
     </footer>
