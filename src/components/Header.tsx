@@ -37,12 +37,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          {/* Logo */}
 <div className="flex items-center space-x-2">
   <a href="#hero" className="flex items-center">
     <img 
       src="/livgruha_logo_transparent-bjem1q3g.png" 
-      alt="Gruha Logo" 
+      alt="LIVGRUHA" 
       className="h-10 w-auto"
     />
   </a>
