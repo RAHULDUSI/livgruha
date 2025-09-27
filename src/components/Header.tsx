@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../livgruha_logo_transparent-bjem1q3g';
+// import logo from '../livgruha_logo_transparent-bjem1q3g';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ const Header = () => {
           {/* Logo */}
 <div className="flex items-center space-x-2">
   <img
-  src={logo} // This is the correct way to use the imported asset
+  src='../livgruha_logo_transparent-bjem1q3g'; // This is the correct way to use the imported asset
   alt="LIVGRUHA INTERIORS" // Updated alt text
   className="h-10 w-auto"
 />
