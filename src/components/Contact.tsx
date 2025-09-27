@@ -49,7 +49,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@livgruha.com',
+      details: 'support@livgruha.com',
       subtext: 'We reply within 24 hours'
     },
     {
