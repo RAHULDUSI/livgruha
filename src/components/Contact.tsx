@@ -43,7 +43,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+91 98765 43210',
+      details: '+91 79956 72323',
       subtext: 'Mon-Sat 9AM-7PM'
     },
     {
