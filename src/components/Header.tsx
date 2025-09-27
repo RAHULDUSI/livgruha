@@ -5,13 +5,37 @@ import logo from '../livgruha_logo_transparent-bjem1q3g';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  // STATE ADDED: For fetching data from the backend
+  const [backendMessage, setBackendMessage] = useState('');
 
+  // Existing useEffect for scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // useEffect ADDED: For making an API call to the backend
+  useEffect(() => {
+    const fetchBackendData = async () => {
+      try {
+        // *** Connects to your backend API endpoint ***
+        const response = await fetch('/api/header-config'); 
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        // Use the fetched data (e.g., setting a user name, or a config value)
+        setBackendMessage(data.message || 'LIVGRUHA INTERIORS'); 
+      } catch (error) {
+        console.error("Error fetching header config:", error);
+        setBackendMessage('LIVGRUHA INTERIORS'); // Fallback text
+      }
+    };
+    fetchBackendData();
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -37,21 +61,24 @@ const Header = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
+          
           {/* Logo */}
-<div className="flex items-center space-x-2">
-  <img
-  src='../livgruha_logo_transparent-bjem1q3g'; // This is the correct way to use the imported asset
-  alt="LIVGRUHA INTERIORS" // Updated alt text
-  className="h-10 w-auto"
-/>
+          <div className="flex items-center space-x-2">
+            <img
+              src={logo} // FIX: Correctly using the imported asset variable
+              alt="LIVGRUHA INTERIORS"
+              className="h-14 w-auto" // CHANGE: Increased size from h-10 to h-14
+            />
 
-  <span
-    className={`text-2xl font-bold transition-colors ${
-      isScrolled ? 'text-slate-900' : 'text-white'
-    }`}
-  >
-  </span>
-</div>
+            <span
+              className={`text-2xl font-bold transition-colors ${
+                isScrolled ? 'text-slate-900' : 'text-white'
+              }`}
+            >
+              {backendMessage || 'LIVGRUHA INTERIORS'} {/* Displaying fetched message or fallback */}
+            </span>
+          </div>
+          
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
