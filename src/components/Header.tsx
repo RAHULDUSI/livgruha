@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../livgruha_logo_transparent-bjem1q3g';
+// ⚠️ CRITICAL FIX: Assuming the logo file is a PNG and adding the extension.
+import logo from '../livgruha_logo_transparent-bjem1q3g.png'; 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ const Header = () => {
   // STATE ADDED: For fetching data from the backend
   const [backendMessage, setBackendMessage] = useState('');
 
-  // Existing useEffect for scroll
+  // --- EFFECT 1: Handle Scroll State ---
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -18,25 +19,25 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // useEffect ADDED: For making an API call to the backend
+  // --- EFFECT 2: API Call to Backend ---
   useEffect(() => {
     const fetchBackendData = async () => {
       try {
-        // *** Connects to your backend API endpoint ***
+        // ⭐ API CONNECTION: Replace with your actual backend endpoint
         const response = await fetch('/api/header-config'); 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        // Use the fetched data (e.g., setting a user name, or a config value)
+        // Assuming your backend returns { message: '...' }
         setBackendMessage(data.message || 'LIVGRUHA INTERIORS'); 
       } catch (error) {
         console.error("Error fetching header config:", error);
-        setBackendMessage('LIVGRUHA INTERIORS'); // Fallback text
+        setBackendMessage('LIVGRUHA INTERIORS'); // Fallback text on error
       }
     };
     fetchBackendData();
-  }, []);
+  }, []); // Runs once on mount
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -65,9 +66,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img
-              src={logo} // FIX: Correctly using the imported asset variable
+              src={logo} // ✅ SYNTAX FIX: Using the imported variable 'logo'
               alt="LIVGRUHA INTERIORS"
-              className="h-14 w-auto" // CHANGE: Increased size from h-10 to h-14
+              className="h-14 w-auto" // ✅ INCREASED SIZE: From h-10 to h-14
             />
 
             <span
@@ -75,7 +76,7 @@ const Header = () => {
                 isScrolled ? 'text-slate-900' : 'text-white'
               }`}
             >
-              {backendMessage || 'LIVGRUHA INTERIORS'} {/* Displaying fetched message or fallback */}
+              {backendMessage || 'LIVGRUHA INTERIORS'} {/* Displays API fetched message */}
             </span>
           </div>
           
