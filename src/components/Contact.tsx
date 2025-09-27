@@ -55,7 +55,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'Mumbai, Maharashtra',
+      details: 'Telangana, Andhra Pradesh, Tamilnadu, Karnataka',
       subtext: 'By appointment only'
     },
     {
